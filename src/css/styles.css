@@ -26,3 +26,11 @@ button {
     padding: 5px;
     text-transform: capitalize;
 }
+
+.acerto {
+    color: #22b255;
+}
+
+.error {
+    color: #d72c4b;
+}

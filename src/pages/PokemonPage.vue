@@ -14,7 +14,7 @@
 			class="app-center"
 		/>
 		<template v-if="showAnswer">
-			<h2 class="fade-in">{{ message }}</h2>
+			<h2 class="fade-in" :class="{ acerto, error } ">{{ message }}</h2>
 			<button @click="newGame">
 				Nuevo Juego
 			</button>
@@ -38,7 +38,9 @@ export default {
 			pokemon: null,
 			showPokemon: false,
 			showAnswer: false,
-			message: false
+			message: false,
+			acerto: false,
+			error: false
 		};
 	},
 	methods: {
@@ -49,16 +51,21 @@ export default {
 			console.log(this.pokemon)
 		},
 		checkAnswer(pokemonId) {
+			this.acerto = false;
+			this.error = false;
 			this.showPokemon = true;
 			this.showAnswer = true;
-			// console.log( 'Pokemon Page Called', pokemonId );
 			if ( pokemonId === this.pokemon.id ) {
 				this.message = `Correcto ${this.pokemon.name}!`
+				this.acerto = true;
 			} else {
 				this.message = `Ooopss, it was ${this.pokemon.name}!`
+				this.error = true;
 			}
 		},
 		newGame() {
+			this.acerto = false;
+			this.error = false;
 			this.showPokemon = false;
 			this.showAnswer = false;
 			this.pokemon = null;

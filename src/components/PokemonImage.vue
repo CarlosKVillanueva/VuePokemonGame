@@ -11,9 +11,6 @@
 			 alt="pokemon"
 			 class="fade-in">
 
-
-
-
 	</div>
 </template>
 
