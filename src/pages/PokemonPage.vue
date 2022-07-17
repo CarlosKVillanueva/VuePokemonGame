@@ -56,7 +56,7 @@ export default {
 			this.showPokemon = true;
 			this.showAnswer = true;
 			if ( pokemonId === this.pokemon.id ) {
-				this.message = `Correcto ${this.pokemon.name}!`
+				this.message = `Correcto, ${this.pokemon.name}!`
 				this.acerto = true;
 			} else {
 				this.message = `Ooopss, it was ${this.pokemon.name}!`
